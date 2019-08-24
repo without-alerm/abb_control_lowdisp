@@ -2,7 +2,6 @@
 #define TRANSLATION_H
 
 #include <math.h>
-#include <Eigen/Eigen>
 using namespace Eigen;
 
 //知乎收录，通过参数引用返回值

@@ -35,13 +35,11 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
-        widget.h \
-    translation.h
+        widget.h
 
 FORMS += \
         widget.ui
 
-INCLUDEPATH+= D:\01.software\02.programmingTools\eigen
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

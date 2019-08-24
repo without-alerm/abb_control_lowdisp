@@ -4,9 +4,9 @@
 void Widget::on_but_read_cur_joint_clicked()
 {
     QString tar_pos_mark = "11";
-    ui->action_mainText->appendPlainText("获取当前关节角");
+    Widget::broadcast("获取当前关节角");
     msg_send = tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark;
-    ui->action_mainText->appendPlainText(msg_send);
+    Widget::broadcast(msg_send);
     QByteArray char_msg_send = msg_send.toUtf8();
     tcpClient->write(char_msg_send);
     //接收
@@ -27,9 +27,9 @@ void Widget::on_but_set_tar_joint_clicked()
 
     QString tar_pos_mark = "12";
 
-    ui->action_mainText->appendPlainText("单点位置控制");
+    Widget::broadcast("单点位置控制");
     msg_send = tar_pos_mark+","+tar_joint_1+","+tar_joint_2+","+tar_joint_3+","+tar_joint_4+","+tar_joint_5+","+tar_joint_6+","+tar_pos_mark;
-    ui->action_mainText->appendPlainText(msg_send);
+    Widget::broadcast(msg_send);
     QByteArray char_msg_send = msg_send.toUtf8();
     tcpClient->write(char_msg_send);
 }
@@ -37,9 +37,9 @@ void Widget::on_but_set_tar_joint_clicked()
 void Widget::on_but_read_cur_pos_clicked()
 {
     QString tar_pos_mark = "13";
-    ui->action_mainText->appendPlainText("获取当前位置");
+    Widget::broadcast("获取当前位置");
     msg_send = tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark+","+tar_pos_mark;
-    ui->action_mainText->appendPlainText(msg_send);
+    Widget::broadcast(msg_send);
     QByteArray char_msg_send = msg_send.toUtf8();
     tcpClient->write(char_msg_send);
 }
@@ -55,9 +55,9 @@ void Widget::on_but_set_target_pos_clicked()
 
     QString tar_pos_mark = "14";
 
-    ui->action_mainText->appendPlainText("单点位置控制");
+    Widget::broadcast("单点位置控制");
     msg_send = tar_pos_mark+","+tar_pos_x+","+tar_pos_y+","+tar_pos_z+","+tar_pos_rx+","+tar_pos_ry+","+tar_pos_rz+","+tar_pos_mark;
-    ui->action_mainText->appendPlainText(msg_send);
+    Widget::broadcast(msg_send);
     QByteArray char_msg_send = msg_send.toUtf8();
     tcpClient->write(char_msg_send);
 }

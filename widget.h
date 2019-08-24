@@ -22,6 +22,7 @@ public:
     double abbData[3][8];
     void data_manager(QString);
     void Sleep(int msec);
+    void broadcast(QString msg);
 
 private slots:
     void on_but_abb_dataInput_clicked();
